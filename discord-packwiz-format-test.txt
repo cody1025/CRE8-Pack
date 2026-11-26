@@ -1,0 +1,1 @@
+Test the Jammersmurph-style Packwiz changelog layout and the three primary Discord link buttons.
