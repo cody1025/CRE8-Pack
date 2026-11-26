@@ -205,10 +205,6 @@ file = "config/create_enchantment_industry-common.toml"
 hash = "c758403d22c507ca6c7c3e52460ac2668127b9a20ee2cd85e0e2aed1d252f35b"
 
 [[files]]
-file = "config/create_enchantment_industry-server-1.toml.bak"
-hash = "33a9dbca0cf3e8572343b31546a4b34dee3878d11301556cf1af70dc7dfa565b"
-
-[[files]]
 file = "config/create_enchantment_industry-server.toml"
 hash = "9920298fd39d60a55eeba4bf00036c48c26ca67028f53d002f39e5f3d9113f1c"
 
@@ -641,10 +637,6 @@ file = "config/neoforge-client.toml"
 hash = "a5f0eb38f8daf8574f7672a8393a0ab5c668d6ec6e7ae43fc8669e928786929d"
 
 [[files]]
-file = "config/neoforge-common-1.toml.bak"
-hash = "fe878a2717a145cd890621eac5b3be1e1fd656f7ff9abc6e8d53f670d37474c4"
-
-[[files]]
 file = "config/neoforge-common.toml"
 hash = "0f6d56b78517db000f8326f434f10c3c6ebcb5504fe632123e8e740df397805b"
 
@@ -671,10 +663,6 @@ hash = "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
 [[files]]
 file = "config/offroad-server.toml"
 hash = "7dda83d4436419564b495e65b4123ab8453eb926cdd8dabc526e41d3ace6bf40"
-
-[[files]]
-file = "config/openpartiesandclaims-server-1.toml.bak"
-hash = "bf5f94fb473e39e1a785859ab3f3711ffd2c8d67e235dccae85b57cc8738716c"
 
 [[files]]
 file = "config/openpartiesandclaims-server.toml"
@@ -863,18 +851,6 @@ hash = "58c9270f258d0b224bb7d0f7c927544d5fbe5f1b8027c820e1e14ecbf48fb88c"
 [[files]]
 file = "config/xaeropatreon.txt"
 hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-
-[[files]]
-file = "erscodycDownloadsCRE8-Pack"
-hash = "a4d7238cb2e8a5c110e374236f17fcef897238afefc8010038e15f64ae5f7cbc"
-
-[[files]]
-file = "index.toml.before-client-fix.bak"
-hash = "42da44bfba6fc2cd7793f1721e52a80464b4ba0ba2b86672c15cd3f2af1665f5"
-
-[[files]]
-file = "index.toml.before-invtools-fix.bak"
-hash = "65f45ce527d154d4bcca3d7675fbe6bd789a21ea6dd40d166d67e39737c1d18f"
 
 [[files]]
 file = "mods/AI-Improvements-1.21-0.5.3.jar"

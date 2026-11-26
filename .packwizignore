@@ -1,3 +1,5 @@
 config/packupdater.properties
 
 *.backup
+*.bak
+erscodycDownloadsCRE8-Pack*
