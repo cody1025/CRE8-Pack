@@ -1170,10 +1170,6 @@ hash = "e1dc3f4c7cb2d6c76d84a4c0a86d2ef15a7c79ecf5c298cdcb6dc27bb5da98cd"
 metafile = true
 
 [[files]]
-file = "mods/packupdater.pw.toml.backup"
-hash = "42e140136f3144ad22b5e762d5cab51dd37a5af7d76f37c82cb8bc7a81d9ec4a"
-
-[[files]]
 file = "mods/railways-0.2.1+neoforge-mc1.21.1.jar"
 hash = "b7636c8b1b0352ed1a130dfe67f8bb574e2fc08803ed1cda4d3ea00505193914"
 
