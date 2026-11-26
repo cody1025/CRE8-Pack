@@ -321,6 +321,10 @@ file = "config/curios-server.toml"
 hash = "3c34cf9f7918c6a9ec15b14a87aa4570a751c1688f8ac01cb2e9acfb9392a734"
 
 [[files]]
+file = "config/desiredservers/desiredservers.json"
+hash = "e00b40b1868022da876f2558da721325fc04fb2908094e302a21aed24a1b7bdb"
+
+[[files]]
 file = "config/discord_chat_mod-client.toml"
 hash = "a8798f05e7c57eb60c7eb4771766562821e3521851283e65b31397a197cbe411"
 
@@ -1019,6 +1023,11 @@ hash = "5525a3a0c8b1c476cbc467d021e9d1492b58c78de31ed269eb04f169d42db0a1"
 [[files]]
 file = "mods/curios-neoforge-9.5.1+1.21.1.jar"
 hash = "a45df2125c26219974aba7507ffc9afe7b83acc941a386af3faacb1cc0056fde"
+
+[[files]]
+file = "mods/desired-servers.pw.toml"
+hash = "eb84ca6cbfd6d1eb13d6e3fc33e941cd98f89a83aad7300d7380606e2646e8c5"
+metafile = true
 
 [[files]]
 file = "mods/discord_chat_mod-neoforge-1.21.1-2.8.0.jar"
