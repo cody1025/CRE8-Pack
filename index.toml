@@ -1073,8 +1073,13 @@ file = "mods/gravestonecurioscompat-1.21.1-NeoForge-4.0.2.jar"
 hash = "d8869fb374a754dcbf61d99d3df20d25000f9079aa16f0dec3f78f30cf823285"
 
 [[files]]
-file = "mods/invtools-neoforge-1.21.1-2.1.2.jar"
-hash = "781c7ae5669f3d972bc713c45d453062196d372368ddac78f984009f673f0470"
+file = "mods/invtools-neoforge-1.21.1-3.0.jar"
+hash = "2b91e6dea3ce89ce54bae2452f211fa472fee0a51f8e0c445960395c4c2f036e"
+
+[[files]]
+file = "mods/invtools.pw.toml"
+hash = "f2772f1a1be7e236c748b4c1a79d222201aeb2c5b6c20e1fb7902c54cfd53206"
+metafile = true
 
 [[files]]
 file = "mods/iris-neoforge-1.8.14-beta.1+mc1.21.1.jar"
