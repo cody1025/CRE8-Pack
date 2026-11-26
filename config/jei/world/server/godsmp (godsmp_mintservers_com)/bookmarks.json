@@ -1,0 +1,14 @@
+[
+  {"version":2},
+  {"recipe":"minecraft:terracotta","recipeType":"create:fan_blasting","bookmarkType":"RECIPE"},
+  {"recipe":["create:fill_minecraft_bucket_with_minecraft_lava",{"ingredients":[{"item":"minecraft:bucket"},{"type":"neoforge:components","fluids":"minecraft:lava","components":{},"amount":1000}],"results":[{"id":"minecraft:lava_bucket"}],"type":"create:filling"}],"recipeType":"create:spout_filling","bookmarkType":"RECIPE"},
+  {"recipe":["create:empty_minecraft_lava_bucket_of_minecraft_lava",{"ingredients":[{"item":"minecraft:lava_bucket"}],"results":[{"id":"minecraft:bucket"},{"id":"minecraft:lava","amount":1000}],"type":"create:emptying"}],"recipeType":"create:draining","bookmarkType":"RECIPE"},
+  {"ingredient":{"id":"minecraft:crimson_door"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"recipe":"minecraft:netherite_ingot","recipeType":"minecraft:crafting","bookmarkType":"RECIPE"},
+  {"ingredient":{"id":"create:gearbox"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"create:large_cogwheel"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"aeronautics:gyroscopic_propeller_bearing"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"ingredient":{"id":"minecraft:raw_gold"},"type":"item_stack","bookmarkType":"INGREDIENT"},
+  {"recipe":"createdieselgenerators:crafting/pumpjack_hole","recipeType":"minecraft:crafting","bookmarkType":"RECIPE"},
+  {"recipe":"create:crushing/gilded_blackstone","recipeType":"create:crushing","bookmarkType":"RECIPE"}
+]

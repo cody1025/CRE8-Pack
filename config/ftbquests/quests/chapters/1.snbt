@@ -1,0 +1,33 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "1"
+	group: ""
+	id: "2AFFD0E6473045F3"
+	images: [ ]
+	order_index: 0
+	quest_links: [ ]
+	quests: [{
+		id: "792DCF5BEFF3F4B0"
+		tasks: [
+			{
+				id: "42209340F86B86BB"
+				type: "checkmark"
+			}
+			{
+				biome: "minecraft:plains"
+				icon: {
+					components: {
+						"!ftbquests:icon": { }
+						"ftbquests:entity_face": "minecraft:fox"
+					}
+					id: "ftbquests:custom_icon"
+				}
+				id: "213517D820E905B2"
+				type: "biome"
+			}
+		]
+		x: 4.0d
+		y: 0.5d
+	}]
+}

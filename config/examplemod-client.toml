@@ -1,0 +1,3 @@
+#Always show the remaining backtank air (icon + time) on the HUD, like it does underwater
+#Can also be toggled in game with the 'Toggle Backtank Air Display' keybind
+alwaysShowAir = false

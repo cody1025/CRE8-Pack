@@ -1,0 +1,56 @@
+#General Configs
+[general]
+	#Amount of tries that the random tick will affect a block.
+	#Example, when set to 15: Each time growth is applied on a random tick block, it will trigger 15 growth ticks.
+	#Random ticks, in general, progress slower than applying bonemeal affects;
+	#This config is there to buff random tick growth.
+	# Default: 30
+	# Range: 1 ~ 100
+	random_tick_tries = 30
+	#Chance that each random tick tries actually triggers.
+	#Example, when set to 0.7 (70%): Each time a random tick try is to be applied, it will actually take effect 70% of the time.
+	#Random ticks, in general, progress slower than applying bonemeal affects;
+	#This config is there to buff random tick growth.
+	# Default: 0.6
+	# Range: 0.0 ~ 1.0
+	random_tick_chance = 0.6
+
+[twerk]
+	#Configs for Twerking (Crouching)
+	#The square radius around the player to check.
+	#A radius of 5 would cause an area of 11x11.
+	# Default: 3
+	# Range: 0 ~ 30
+	radius = 3
+	#The height above and below the player to check.
+	# Default: 1
+	# Range: 0 ~ 15
+	height = 1
+	#Maximum number of blocks that are able to be targeted every check.
+	# Default: 5
+	# Range: > 1
+	max_blocks = 5
+	#The probability of performing a check every time you twerk (crouch).
+	# Default: 0.4
+	# Range: 0.0 ~ 1.0
+	chance = 0.4
+
+[sprint]
+	#Configs for Sprinting
+	#The square radius around the player to check.
+	#A radius of 5 would cause an area of 11x11.
+	# Default: 3
+	# Range: 0 ~ 30
+	radius = 3
+	#The height above and below the player to check.
+	# Default: 1
+	# Range: 0 ~ 15
+	height = 1
+	#Maximum number of blocks that are able to be targeted every check.
+	# Default: 5
+	# Range: > 1
+	max_blocks = 5
+	#The probability of performing a check every tick while you are sprinting.
+	# Default: 0.05
+	# Range: 0.0 ~ 1.0
+	chance = 0.05

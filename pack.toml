@@ -1,0 +1,13 @@
+name = "CRE8 SMP"
+author = "cody"
+version = "1.0.1"
+pack-format = "packwiz:1.1.0"
+
+[index]
+file = "index.toml"
+hash-format = "sha256"
+hash = "55f674ed6aca7d6191138d5bedefc8e61e2b6374ec6e86c91593b98d96ee980a"
+
+[versions]
+minecraft = "1.21.1"
+neoforge = "21.1.265"
