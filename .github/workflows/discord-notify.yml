@@ -1,0 +1,126 @@
+name: CRE8 SMP Packwiz Discord changelog
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out pack
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Build and send changelog
+        uses: actions/github-script@v7
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        with:
+          script: |
+            const webhook = process.env.DISCORD_WEBHOOK_URL;
+            if (!webhook) {
+              core.setFailed("Missing DISCORD_WEBHOOK_URL repository secret in cody1025/CRE8-Pack.");
+              return;
+            }
+
+            const fs = require("fs");
+            const { owner, repo } = context.repo;
+            const branch = context.ref.replace("refs/heads/", "");
+            const before = context.payload.before;
+            const after = context.sha;
+            const actor = context.payload.sender?.login || context.actor;
+            const repoUrl = `https://github.com/${owner}/${repo}`;
+            const compareUrl = context.payload.compare || `${repoUrl}/compare/${before}...${after}`;
+
+            let changed = [];
+            if (before && !/^0+$/.test(before)) {
+              const { stdout } = await exec.getExecOutput("git", ["diff", "--name-status", before, after], { silent: true });
+              changed = stdout.trim().split("\n").filter(Boolean).map(line => {
+                const parts = line.split("\t");
+                return { status: parts[0][0], path: parts.at(-1) };
+              });
+            } else {
+              const { stdout } = await exec.getExecOutput("git", ["ls-files"], { silent: true });
+              changed = stdout.trim().split("\n").filter(Boolean).map(path => ({status:"A",path}));
+            }
+
+            const pack = fs.readFileSync("pack.toml", "utf8");
+            const readValue = (key) => pack.match(new RegExp("^" + key + "\\s*=\\s*[\"']([^\"']+)[\"']", "m"))?.[1] || "unknown";
+            const packName = readValue("name");
+            const packVersion = readValue("version");
+            const mcVersion = pack.match(/^minecraft\s*=\s*["']([^"']+)/m)?.[1] || "unknown";
+            const loaderVersion = pack.match(/^neoforge\s*=\s*["']([^"']+)/m)?.[1] || "unknown";
+
+            const modChanges = changed.filter(x => /^mods\/.*\.(jar|pw\.toml)$/i.test(x.path));
+            const added = modChanges.filter(x => x.status === "A");
+            const removed = modChanges.filter(x => x.status === "D");
+            const updated = modChanges.filter(x => x.status !== "A" && x.status !== "D");
+
+            const clean = (s, n=180) => String(s || "").replace(/[\r\n\u0000]/g," ").slice(0,n);
+            const label = (path) => {
+              const file = path.split("/").pop().replace(/\.pw\.toml$/i,"").replace(/\.jar$/i,"");
+              return file.replace(/[-_]+/g," ").replace(/\b\w/g,c=>c.toUpperCase());
+            };
+            const link = (path) => `[${clean(label(path))}](${repoUrl}/blob/${after}/${path})`;
+            const lines = [
+              `## ${clean(packName)} • dev`,
+              "Packwiz changelog preview.",
+              "",
+              `**${added.length} added · ${removed.length} removed · ${updated.length} updated**`,
+              `Pushed by [${clean(actor)}](https://github.com/${actor})`,
+              "",
+              `${clean(packName)} ${clean(packVersion)} • minecraft ${clean(mcVersion)} • neoforge ${clean(loaderVersion)}`
+            ];
+
+            const section = (title, entries, verb) => {
+              if (!entries.length) return;
+              lines.push("", `**${title} (${entries.length})**`);
+              for (const item of entries.slice(0, 15)) {
+                const side = item.path.endsWith(".pw.toml") ? "" : "";
+                lines.push(`• ${link(item.path)}${side}`);
+              }
+              if (entries.length > 15) lines.push(`• …and ${entries.length - 15} more`);
+            };
+
+            section("Added mods", added, "Added");
+            section("Removed mods", removed, "Removed");
+            section("Updated mods", updated, "Updated");
+
+            const other = changed.filter(x => !/^mods\/.*\.(jar|pw\.toml)$/i.test(x.path));
+            if (other.length) {
+              lines.push("", `**Other pack changes (${other.length})**`);
+              for (const item of other.slice(0, 15)) {
+                const verb = item.status === "A" ? "Added" : item.status === "D" ? "Removed" : "Changed";
+                lines.push(`• ${verb} [${clean(item.path)}](${repoUrl}/blob/${after}/${item.path})`);
+              }
+            }
+
+            const commits = context.payload.commits || [];
+            if (commits.length) {
+              lines.push("", `**Commits (${commits.length})**`);
+              for (const commit of commits.slice(-10)) {
+                const sha = String(commit.id || "").slice(0,7);
+                const subject = clean(commit.message?.split("\n")[0] || "Commit", 150);
+                lines.push(`• [${sha}](${commit.url}) ${subject} — ${clean(commit.author?.name || actor)}`);
+              }
+            }
+
+            lines.push("", `[View push](${compareUrl})`, "-# Packwiz changelog • CRE8 SMP");
+            const message = lines.join("\n").slice(0, 1950);
+            const response = await fetch(webhook, {
+              method: "POST",
+              headers: {"Content-Type":"application/json"},
+              body: JSON.stringify({username:"CRE8 SMP • dev", allowed_mentions:{parse:[]}, content:message})
+            });
+            if (!response.ok) {
+              core.setFailed(`Discord webhook returned HTTP ${response.status}: ${await response.text()}`);
+              return;
+            }
+            core.info("CRE8 SMP Packwiz changelog sent successfully.");
