@@ -1,0 +1,13 @@
+﻿name = "Refined Tools"
+filename = "Refined Tools 3.0.zip"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/cody1025/CRE8-Pack/main/optional-resourcepacks/Refined%20Tools%203.0.zip"
+hash-format = "sha256"
+hash = "b3d5d8940e67a9b48bbe72f2ff825810f9f30d13c0a29c96caa4463beaa2fea5"
+
+[option]
+optional = true
+default = false
+description = "Optional refined tool textures."

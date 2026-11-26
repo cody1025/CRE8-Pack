@@ -1,0 +1,13 @@
+﻿name = "Refined Buckets"
+filename = "Refined Buckets 2.4.1.zip"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/cody1025/CRE8-Pack/main/optional-resourcepacks/Refined%20Buckets%202.4.1.zip"
+hash-format = "sha256"
+hash = "198748b54fb15bc01883da58aa87da44bd8c15d41fef862613f1adb03bd33637"
+
+[option]
+optional = true
+default = false
+description = "Optional refined bucket textures."

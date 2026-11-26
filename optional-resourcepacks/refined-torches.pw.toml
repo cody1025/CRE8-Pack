@@ -1,0 +1,13 @@
+﻿name = "Refined Torches"
+filename = "refined torches 2.1.zip"
+side = "client"
+
+[download]
+url = "https://raw.githubusercontent.com/cody1025/CRE8-Pack/main/optional-resourcepacks/refined%20torches%202.1.zip"
+hash-format = "sha256"
+hash = "825afca97394c797746c8dcefb9aa94a1cc4db5da03df175348fe07941289990"
+
+[option]
+optional = true
+default = false
+description = "Optional refined torch textures."

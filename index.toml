@@ -1,6 +1,10 @@
 hash-format = "sha256"
 
 [[files]]
+file = "CRE8-Mod-List.txt"
+hash = "86dbaac363cbc23b9f3182af487322f3fae28d91c367b6782d7cf791a839d786"
+
+[[files]]
 file = "config/EasyMSC/bans.json"
 hash = "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
 
@@ -1206,8 +1210,28 @@ file = "optional-resourcepacks/Refined Tools 3.0.zip"
 hash = "b3d5d8940e67a9b48bbe72f2ff825810f9f30d13c0a29c96caa4463beaa2fea5"
 
 [[files]]
+file = "optional-resourcepacks/bare-bones.pw.toml"
+hash = "f616e0b5a14b51faa9cf806ea2c4ad5e3ffedde604539808ad4570d53952bbb9"
+metafile = true
+
+[[files]]
 file = "optional-resourcepacks/refined torches 2.1.zip"
 hash = "825afca97394c797746c8dcefb9aa94a1cc4db5da03df175348fe07941289990"
+
+[[files]]
+file = "optional-resourcepacks/refined-buckets.pw.toml"
+hash = "29248a3f8c0786620a997b9c8b077c6881a391c4cad5b6a406520c811f5e3900"
+metafile = true
+
+[[files]]
+file = "optional-resourcepacks/refined-tools.pw.toml"
+hash = "af62d2bbafa0139f9fc77cad1f206eb7a9a418c0cacbbe404b2f2c336c75f2e6"
+metafile = true
+
+[[files]]
+file = "optional-resourcepacks/refined-torches.pw.toml"
+hash = "e3b0a3874d7327a3f5573c39c952e638ad60a8b7a5242b523ecefeb1a7424557"
+metafile = true
 
 [[files]]
 file = "resourcepacks/Bare Bones 1.21.11.zip"
