@@ -1,0 +1,2 @@
+CRE8 SMP Discord button test.
+This file was added to trigger a fresh Packwiz-style Discord notification test.
