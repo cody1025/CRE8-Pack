@@ -685,10 +685,6 @@ file = "config/packetfixer.properties"
 hash = "d33a95413f594c337b25b55923fa871bb4b023c7f00d5e4eefac33c3b816c3d8"
 
 [[files]]
-file = "config/packupdater.properties"
-hash = "1abac0fb2c13e5a9cdaaa6a145acb1015c47fdbaccca3fe08acfd679efd7f2c3"
-
-[[files]]
 file = "config/placebo.cfg"
 hash = "eb7e9906d126543f03c2257ca98efa4b845d1e7479dc8b069a12b194c86debcf"
 
