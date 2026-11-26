@@ -71,7 +71,7 @@ jobs:
             const link = (path) => `[${clean(label(path))}](${repoUrl}/blob/${after}/${path})`;
             const buttonLinks = [];
             const lines = [
-              `## ${clean(packName)} • dev`,
+              `## ${clean(packName)}`,
               "Packwiz changelog preview.",
               "",
               `**${added.length} added · ${removed.length} removed · ${updated.length} updated**`,
@@ -117,7 +117,13 @@ jobs:
             }
 
             lines.push("", `[View push](${compareUrl})`, "-# Packwiz changelog • CRE8 SMP");
-            buttonLinks.unshift({ label: "View all pack changes", url: compareUrl });
+            // Keep the three primary navigation buttons consistent with the CRE8 Packwiz post style.
+            buttonLinks.length = 0;
+            buttonLinks.push(
+              { label: "View Pack", url: repoUrl },
+              { label: "View Changelog", url: `${repoUrl}/commits/${branch}` },
+              { label: "View Commit", url: `${repoUrl}/commit/${after}` }
+            );
             const message = lines.join("\n").slice(0, 3900);
             // Discord supports up to 25 link buttons per message (5 rows × 5 buttons).
             const buttons = buttonLinks.slice(0, 25);
