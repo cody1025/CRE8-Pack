@@ -1078,7 +1078,7 @@ hash = "2b91e6dea3ce89ce54bae2452f211fa472fee0a51f8e0c445960395c4c2f036e"
 
 [[files]]
 file = "mods/invtools.pw.toml"
-hash = "681b71175e433efe5e85a1f5071f2d7967eab42af03148a0534ac977b4adb990"
+hash = "bc6b87f5eb80f6e29b3ebebd8347b1fd8334f7e64c538ab9413aa718b12b64bb"
 metafile = true
 
 [[files]]
