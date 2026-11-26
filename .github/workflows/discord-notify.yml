@@ -69,6 +69,7 @@ jobs:
               return file.replace(/[-_]+/g," ").replace(/\b\w/g,c=>c.toUpperCase());
             };
             const link = (path) => `[${clean(label(path))}](${repoUrl}/blob/${after}/${path})`;
+            const buttonLinks = [];
             const lines = [
               `## ${clean(packName)} • dev`,
               "Packwiz changelog preview.",
@@ -85,6 +86,7 @@ jobs:
               for (const item of entries.slice(0, 15)) {
                 const side = item.path.endsWith(".pw.toml") ? "" : "";
                 lines.push(`• ${link(item.path)}${side}`);
+                buttonLinks.push({ label: clean(label(item.path), 80), url: `${repoUrl}/blob/${after}/${item.path}` });
               }
               if (entries.length > 15) lines.push(`• …and ${entries.length - 15} more`);
             };
@@ -99,6 +101,7 @@ jobs:
               for (const item of other.slice(0, 15)) {
                 const verb = item.status === "A" ? "Added" : item.status === "D" ? "Removed" : "Changed";
                 lines.push(`• ${verb} [${clean(item.path)}](${repoUrl}/blob/${after}/${item.path})`);
+                buttonLinks.push({ label: clean(`${verb}: ${item.path.split("/").pop()}`, 80), url: `${repoUrl}/blob/${after}/${item.path}` });
               }
             }
 
@@ -109,15 +112,31 @@ jobs:
                 const sha = String(commit.id || "").slice(0,7);
                 const subject = clean(commit.message?.split("\n")[0] || "Commit", 150);
                 lines.push(`• [${sha}](${commit.url}) ${subject} — ${clean(commit.author?.name || actor)}`);
+                buttonLinks.push({ label: `Commit ${sha}`, url: commit.url });
               }
             }
 
             lines.push("", `[View push](${compareUrl})`, "-# Packwiz changelog • CRE8 SMP");
+            buttonLinks.unshift({ label: "View all pack changes", url: compareUrl });
             const message = lines.join("\n").slice(0, 1950);
+            // Discord supports up to 25 link buttons per message (5 rows × 5 buttons).
+            const buttons = buttonLinks.slice(0, 25);
+            const components = [];
+            for (let i = 0; i < buttons.length; i += 5) {
+              components.push({
+                type: 1,
+                components: buttons.slice(i, i + 5).map(button => ({
+                  type: 2,
+                  style: 5,
+                  label: button.label,
+                  url: button.url
+                }))
+              });
+            }
             const response = await fetch(webhook, {
               method: "POST",
               headers: {"Content-Type":"application/json"},
-              body: JSON.stringify({username:"CRE8 SMP • dev", allowed_mentions:{parse:[]}, content:message})
+              body: JSON.stringify({username:"CRE8 SMP • dev", allowed_mentions:{parse:[]}, content:message, components})
             });
             if (!response.ok) {
               core.setFailed(`Discord webhook returned HTTP ${response.status}: ${await response.text()}`);
