@@ -1215,17 +1215,17 @@ hash = "825afca97394c797746c8dcefb9aa94a1cc4db5da03df175348fe07941289990"
 
 [[files]]
 file = "optional-resourcepacks/refined-buckets.pw.toml"
-hash = "29248a3f8c0786620a997b9c8b077c6881a391c4cad5b6a406520c811f5e3900"
+hash = "ee97338fea6003bffa9610ff455aef998016f411a4c3d878354a1b49603ae82b"
 metafile = true
 
 [[files]]
 file = "optional-resourcepacks/refined-tools.pw.toml"
-hash = "af62d2bbafa0139f9fc77cad1f206eb7a9a418c0cacbbe404b2f2c336c75f2e6"
+hash = "56c98e2f375435be2d8204d464ba7cd2b39b278aa1643cc3438f841a38016efe"
 metafile = true
 
 [[files]]
 file = "optional-resourcepacks/refined-torches.pw.toml"
-hash = "e3b0a3874d7327a3f5573c39c952e638ad60a8b7a5242b523ecefeb1a7424557"
+hash = "67dc78f3ee689f11e25ed7f66909d8b19b821dfa03916705ed0b9cf968c3f244"
 metafile = true
 
 [[files]]
