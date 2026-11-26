@@ -1073,10 +1073,6 @@ file = "mods/gravestonecurioscompat-1.21.1-NeoForge-4.0.2.jar"
 hash = "d8869fb374a754dcbf61d99d3df20d25000f9079aa16f0dec3f78f30cf823285"
 
 [[files]]
-file = "mods/invtools-neoforge-1.21.1-3.0.jar"
-hash = "2b91e6dea3ce89ce54bae2452f211fa472fee0a51f8e0c445960395c4c2f036e"
-
-[[files]]
 file = "mods/invtools.pw.toml"
 hash = "bc6b87f5eb80f6e29b3ebebd8347b1fd8334f7e64c538ab9413aa718b12b64bb"
 metafile = true
