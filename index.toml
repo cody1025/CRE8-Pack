@@ -686,7 +686,7 @@ hash = "d33a95413f594c337b25b55923fa871bb4b023c7f00d5e4eefac33c3b816c3d8"
 
 [[files]]
 file = "config/packupdater.properties"
-hash = "884ad62a5eebd1ba848cdcd4532d8568200792d307bd3486f66f0836057ed985"
+hash = "1abac0fb2c13e5a9cdaaa6a145acb1015c47fdbaccca3fe08acfd679efd7f2c3"
 
 [[files]]
 file = "config/placebo.cfg"
@@ -867,6 +867,18 @@ hash = "58c9270f258d0b224bb7d0f7c927544d5fbe5f1b8027c820e1e14ecbf48fb88c"
 [[files]]
 file = "config/xaeropatreon.txt"
 hash = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+
+[[files]]
+file = "erscodycDownloadsCRE8-Pack"
+hash = "a4d7238cb2e8a5c110e374236f17fcef897238afefc8010038e15f64ae5f7cbc"
+
+[[files]]
+file = "index.toml.before-client-fix.bak"
+hash = "42da44bfba6fc2cd7793f1721e52a80464b4ba0ba2b86672c15cd3f2af1665f5"
+
+[[files]]
+file = "index.toml.before-invtools-fix.bak"
+hash = "65f45ce527d154d4bcca3d7675fbe6bd789a21ea6dd40d166d67e39737c1d18f"
 
 [[files]]
 file = "mods/AI-Improvements-1.21-0.5.3.jar"
@@ -1158,7 +1170,7 @@ hash = "7219a0b3ed622a68291cf4a013f61c2d0ade8f428d8222a1ee2523169b1f0f37"
 
 [[files]]
 file = "mods/packupdater.pw.toml"
-hash = "e1dc3f4c7cb2d6c76d84a4c0a86d2ef15a7c79ecf5c298cdcb6dc27bb5da98cd"
+hash = "42e140136f3144ad22b5e762d5cab51dd37a5af7d76f37c82cb8bc7a81d9ec4a"
 metafile = true
 
 [[files]]
