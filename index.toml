@@ -1194,6 +1194,22 @@ file = "mods/xaeroworldmap-neoforge-1.21.1-1.47.0.jar"
 hash = "6a42b6f01bd96b496e5fcc07d4541bad1a699d9ec8ad58ad40d5dcfe23a7d4c7"
 
 [[files]]
+file = "optional-resourcepacks/Bare Bones 1.21.11.zip"
+hash = "698dad3fa24f2d96cf2edf5fbe6ce782adf4180c4d113e79dd0fc75f70617ad3"
+
+[[files]]
+file = "optional-resourcepacks/Refined Buckets 2.4.1.zip"
+hash = "198748b54fb15bc01883da58aa87da44bd8c15d41fef862613f1adb03bd33637"
+
+[[files]]
+file = "optional-resourcepacks/Refined Tools 3.0.zip"
+hash = "b3d5d8940e67a9b48bbe72f2ff825810f9f30d13c0a29c96caa4463beaa2fea5"
+
+[[files]]
+file = "optional-resourcepacks/refined torches 2.1.zip"
+hash = "825afca97394c797746c8dcefb9aa94a1cc4db5da03df175348fe07941289990"
+
+[[files]]
 file = "resourcepacks/Bare Bones 1.21.11.zip"
 hash = "698dad3fa24f2d96cf2edf5fbe6ce782adf4180c4d113e79dd0fc75f70617ad3"
 
