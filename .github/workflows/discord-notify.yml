@@ -118,7 +118,7 @@ jobs:
 
             lines.push("", `[View push](${compareUrl})`, "-# Packwiz changelog • CRE8 SMP");
             buttonLinks.unshift({ label: "View all pack changes", url: compareUrl });
-            const message = lines.join("\n").slice(0, 1950);
+            const message = lines.join("\n").slice(0, 3900);
             // Discord supports up to 25 link buttons per message (5 rows × 5 buttons).
             const buttons = buttonLinks.slice(0, 25);
             const components = [];
@@ -133,10 +133,18 @@ jobs:
                 }))
               });
             }
-            const response = await fetch(webhook, {
+            // A rich embed gives the changelog a boxed/card-style layout.
+            const embed = {
+              title: `${clean(packName)} • Pack Update`,
+              description: message,
+              color: 0x00D9FF,
+              footer: { text: "CRE8 SMP • Packwiz changelog" }
+            };
+            // Non-application webhooks must opt in to components or Discord silently ignores buttons.
+            const response = await fetch(webhook + "?with_components=true&wait=true", {
               method: "POST",
               headers: {"Content-Type":"application/json"},
-              body: JSON.stringify({username:"CRE8 SMP • dev", allowed_mentions:{parse:[]}, content:message, components})
+              body: JSON.stringify({username:"CRE8 SMP • Updates", allowed_mentions:{parse:[]}, embeds:[embed], components})
             });
             if (!response.ok) {
               core.setFailed(`Discord webhook returned HTTP ${response.status}: ${await response.text()}`);
